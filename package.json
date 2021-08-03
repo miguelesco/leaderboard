@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch src/app/scss/main.scss src/main.css",
+    "start": "webpack serve --open --mode development",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
     "test": "jest "

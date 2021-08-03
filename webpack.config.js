@@ -16,9 +16,13 @@ const scssRules = {
 };
 
 module.exports = {
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'app.js',
+  },
+  devServer: {
+    contentBase: './dist',
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Webpack Project',
