@@ -1,16 +1,16 @@
-import {scoreChildren, scoreList} from './utilities.js';
+import { scoreChildren, scoreList } from './utilities.js';
 
 class Render {
-  constructor() {
+  reloadHTML() {
     scoreList.innerHTML = '';
     scoreChildren.forEach((score, i) => {
-      const count = i + 1;
-      const bg = count % 2 ? 'white-bg' : 'gray-bg';
-      const scoreElement = `
-            <li class="${bg}" >
+      this.count = i + 1;
+      this.bg = this.count % 2 ? 'white-bg' : 'gray-bg';
+      this.scoreElement = `
+            <li class="${this.bg}" >
               ${score.textContent}
             </li>`;
-      scoreList.innerHTML += scoreElement;
+      scoreList.innerHTML += this.scoreElement;
     });
   }
 }

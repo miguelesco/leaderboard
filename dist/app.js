@@ -106,7 +106,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utilities.js */ \"./src/app/modules/utilities.js\");\n\r\n\r\nclass Render {\r\n  constructor() {\r\n    _utilities_js__WEBPACK_IMPORTED_MODULE_0__.scoreList.innerHTML = '';\r\n    _utilities_js__WEBPACK_IMPORTED_MODULE_0__.scoreChildren.forEach((score, i) => {\r\n      const count = i + 1;\r\n      const bg = count % 2 ? 'white-bg' : 'gray-bg';\r\n      const scoreElement = `\r\n            <li class=\"${bg}\" >\r\n              ${score.textContent}\r\n            </li>`;\r\n      _utilities_js__WEBPACK_IMPORTED_MODULE_0__.scoreList.innerHTML += scoreElement;\r\n    });\r\n  }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Render);\n\n//# sourceURL=webpack://webpack-project/./src/app/modules/render.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utilities.js */ \"./src/app/modules/utilities.js\");\n\n\nclass Render {\n  reloadHTML() {\n    _utilities_js__WEBPACK_IMPORTED_MODULE_0__.scoreList.innerHTML = '';\n    _utilities_js__WEBPACK_IMPORTED_MODULE_0__.scoreChildren.forEach((score, i) => {\n      this.count = i + 1;\n      this.bg = this.count % 2 ? 'white-bg' : 'gray-bg';\n      this.scoreElement = `\n            <li class=\"${this.bg}\" >\n              ${score.textContent}\n            </li>`;\n      _utilities_js__WEBPACK_IMPORTED_MODULE_0__.scoreList.innerHTML += this.scoreElement;\n    });\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Render);\n\n//# sourceURL=webpack://webpack-project/./src/app/modules/render.js?");
 
 /***/ }),
 
@@ -116,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"scoreList\": () => (/* binding */ scoreList),\n/* harmony export */   \"scoreChildren\": () => (/* binding */ scoreChildren)\n/* harmony export */ });\nconst scoreList = document.querySelector('.score-list');\r\nconst scoreChildren = Array.from(scoreList.children);\r\n\r\n\r\n\n\n//# sourceURL=webpack://webpack-project/./src/app/modules/utilities.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"scoreList\": () => (/* binding */ scoreList),\n/* harmony export */   \"scoreChildren\": () => (/* binding */ scoreChildren)\n/* harmony export */ });\nconst scoreList = document.querySelector('.score-list');\nconst scoreChildren = Array.from(scoreList.children);\n\n\n//# sourceURL=webpack://webpack-project/./src/app/modules/utilities.js?");
 
 /***/ }),
 
@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ \"./src/main.scss\");\n/* harmony import */ var _app_modules_render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app/modules/render.js */ \"./src/app/modules/render.js\");\n\r\n\r\n\r\nconst init = () => {\r\n  const render = new _app_modules_render_js__WEBPACK_IMPORTED_MODULE_1__.default();\r\n};\r\n\r\ninit();\n\n//# sourceURL=webpack://webpack-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ \"./src/main.scss\");\n/* harmony import */ var _app_modules_render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app/modules/render.js */ \"./src/app/modules/render.js\");\n\n\n\nconst init = () => {\n  const render = new _app_modules_render_js__WEBPACK_IMPORTED_MODULE_1__.default();\n  render.reloadHTML();\n};\n\ninit();\n\n//# sourceURL=webpack://webpack-project/./src/index.js?");
 
 /***/ })
 
