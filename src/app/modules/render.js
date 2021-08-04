@@ -1,6 +1,10 @@
+import create from './createGame.js';
 import { scoreChildren, scoreList } from './utilities.js';
 
 class Render {
+  createGame () {
+    create()
+  }
   reloadHTML = () => {
     scoreList.innerHTML = '';
     scoreChildren.forEach((score, i) => {

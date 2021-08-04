@@ -23,6 +23,9 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    }
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Webpack Project',
