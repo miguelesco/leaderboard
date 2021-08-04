@@ -26,8 +26,7 @@ class Render {
     apiCall('POST', 'games/KxpWNQ8pM6wzQU9F1VhX/scores', newScore).then( response => {
       window.alert(response.result)
     }).catch(err => error(err))
-    
-    this.reloadHTML()
+
   }
   createGame () {
     const gameName = {name: 'Ping Pong'};
