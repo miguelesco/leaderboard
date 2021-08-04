@@ -4,12 +4,12 @@ let count;
 let bg;
 let scoreElement;
 let scores = [];
-let gameCode;
+let gameId = 'KxpWNQ8pM6wzQU9F1VhX';
 
 class Render {
   refresh = async () => {
     try {
-      const response = await apiCall('GET', 'games/KxpWNQ8pM6wzQU9F1VhX/scores');
+      const response = await apiCall('GET', `games/${gameId}/scores`);
       return response.result;
     } catch (err) {
       error(err);
@@ -25,7 +25,7 @@ class Render {
     inputs[0].value = '';
     inputs[1].value = '';
 
-    apiCall('POST', 'games/KxpWNQ8pM6wzQU9F1VhX/scores', newScore).then((response) => {
+    apiCall('POST', `games/${gameId}/scores`, newScore).then((response) => {
       window.alert(response.result);
     }).catch((err) => error(err));
   }
@@ -34,8 +34,7 @@ class Render {
     const gameName = { name: 'Ping Pong' };
     try {
       const response = await apiCall('POST', 'games/', gameName);
-      gameCode = response.result;
-      return gameCode;
+      gameId = response.result;
     } catch (err) {
       return error(err);
     }
