@@ -36,7 +36,7 @@ class Render {
       const response = await apiCall('POST', 'games/', gameName);
       gameId = response.result;
     } catch (err) {
-      return error(err);
+      error(err);
     }
   }
 
