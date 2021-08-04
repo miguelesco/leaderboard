@@ -1,12 +1,13 @@
-import { form, refreshBtn } from "./utilities";
-import Render from './render.js'
+import { form, refreshBtn } from './utilities.js';
+import Render from './render.js';
 
-
-export const listeners = () => {
+const listeners = () => {
   const render = new Render();
   const active = false;
   if (!active) {
     form.addEventListener('submit', (event) => render.addScore(event));
-    refreshBtn.addEventListener('click', () => render.reloadHTML())
+    refreshBtn.addEventListener('click', () => render.reloadHTML());
   }
-}
+};
+
+export default listeners;
