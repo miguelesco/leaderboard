@@ -7,7 +7,6 @@ const init = () => {
   render.reloadHTML();
   listeners();
   // render.createGame();
-  render.refresh();
 };
 
 init();

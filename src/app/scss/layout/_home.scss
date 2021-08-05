@@ -3,14 +3,36 @@
 .big-title {
   margin-top: 50px;
   margin-left: 20px;
-
+  animation-name: changeColor;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
   @include sans-text(40px, bold, 40px);
+}
+
+@-webkit-keyframes changeColor {  
+  0% {
+		color: #ee6055;
+	}
+	25% {
+		color: #60d394;
+	}
+	50% {
+		color: #aaf683;
+	}
+	75% {
+		color: #ffd97d;
+	}
+	100% {
+		color: #ff9b85;
+	}
 }
 
 .leaderboard {
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
   padding: 10% 20%;
 
   &-scores {
@@ -23,6 +45,7 @@
 
       h2 {
         @include sans-text(30px, bold, 30px);
+        color: white;
       }
 
       button {
@@ -37,9 +60,13 @@
 
     ul {
       width: 100%;
-
+      padding: 5px;
       li {
-        @include sans-text(16px, bold, 25px);
+        @include sans-text(14px, 600, 35px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: white;
       }
     }
   }
@@ -49,7 +76,7 @@
 
     h3 {
       @include sans-text(25px, bold, 30px);
-
+      color: white;
       margin-bottom: 20px;
       margin-top: 6px;
     }
