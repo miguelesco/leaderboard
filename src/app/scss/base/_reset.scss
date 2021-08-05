@@ -1,3 +1,5 @@
+@use '../utilities' as *;
+
 *,
 ::before,
 ::after {
@@ -10,6 +12,7 @@ body {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  background-color: black;
 }
 
 ul {
@@ -21,10 +24,33 @@ ul {
 }
 
 .border {
-  border: 3px solid black;
-  -webkit-box-shadow: 4px 3px 0 -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 4px 3px 0 -1px rgba(0, 0, 0, 0.75);
-  box-shadow: 4px 3px 0 -1px rgba(0, 0, 0, 0.75);
+  animation-name: borderChange;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes borderChange {
+  0% {
+    @include border(#ee6055);
+  }
+
+  25% {
+    @include border(#60d394);
+  }
+
+  50% {
+    @include border(#aaf683);
+  }
+
+  75% {
+    @include border(#ffd97d);
+  }
+
+  100% {
+    @include border(#ff9b85);
+  }
 }
 
 .completed {
@@ -37,5 +63,5 @@ ul {
 }
 
 .white-bg {
-  background-color: transparent;
+  background-color: rgb(19, 168, 236);
 }
